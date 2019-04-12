@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vendors</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./scripts/jquery.js"></script>
+    <script src="./scripts/vendor.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Vendors</h1>
+        <form method="POST" id="vendorForm">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" id="vendorName"></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><textarea name="" id="vendorAddress" cols="20" rows="3"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" id="btnAdd" value="Add Vender"></td>
+                </tr>
+            </table>
+    </div>
+    <hr>
+    <div class="container">
+
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="vendorList">
+
+            </tbody>
+        </table>
+    </div>
+    </form>
+
+</body>
+
+</html>
