@@ -131,7 +131,7 @@ async function login(req, res) {
             where: {
                 name: req.body.name
             },
-            include:Cart
+            include: Cart
         })
         if (user) {
             res.send({ success: true, user });
@@ -237,12 +237,11 @@ async function getCartTotal(req, res) {
             where: {
                 UserId: req.params.UserId
             },
-            include:Product
+            include: Product
         });
-        let total=0;
-        for(let item of items)
-        {
-            total+=(item.quantity*item.Product.price);
+        let total = 0;
+        for (let item of items) {
+            total += (item.quantity * item.Product.price);
         }
         res.send({ success: true, total: total });
 
@@ -254,10 +253,10 @@ async function getCartTotal(req, res) {
 async function getCartItems(req, res) {
     try {
         const result = await Cart.findAll({
-            where:{
-                UserId:req.params.UserId
+            where: {
+                UserId: req.params.UserId
             },
-            include:Product
+            include: Product
         })
         res.send(result);
     } catch (e) {
@@ -267,7 +266,8 @@ async function getCartItems(req, res) {
 
 //---------------------------------------------
 
+const PORT = process.env.PORT || 8000
 db.sync()
     .then(() => {
-        app.listen(8000)
+        app.listen(PORT)
     })
